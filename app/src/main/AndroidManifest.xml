@@ -18,6 +18,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"></activity>
+        <provider
+            android:name=".databasehandler.BankDataProvider"
+            android:authorities="com.example.basicbankingapp"
+            android:directBootAware="true"
+            android:exported= "false">
+        </provider>
     </application>
 
 </manifest>

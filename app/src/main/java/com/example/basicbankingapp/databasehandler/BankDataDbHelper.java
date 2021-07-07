@@ -6,12 +6,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.basicbankingapp.databasehandler.BankDataContract.*;
 
-import androidx.annotation.Nullable;
 
 public class BankDataDbHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME="BankData.db";
-    public static final int DATABASE_VERSION=1;
+    public static final String DATABASE_NAME = "BankData.db";
+    public static final int DATABASE_VERSION = 1;
 
 
     public BankDataDbHelper(Context context) {
@@ -20,7 +19,7 @@ public class BankDataDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String SQL_CREATE_USER_TABLE =  "CREATE TABLE " + users.TABLE_NAME + " ("
+        String SQL_CREATE_USER_TABLE = "CREATE TABLE " + users.TABLE_NAME + " ("
                 + users.COLUMN_USER_ACCOUNT_NUMBER + " INTEGER, "
                 + users.COLUMN_USER_NAME + " VARCHAR, "
                 + users.COLUMN_USER_EMAIL + " VARCHAR, "
@@ -28,7 +27,7 @@ public class BankDataDbHelper extends SQLiteOpenHelper {
                 + users.COLUMN_USER_PHONE_NO + " VARCHAR, "
                 + users.COLUMN_USER_ACCOUNT_BALANCE + " INTEGER NOT NULL);";
 
-        String SQL_CREATE_TRANSFER_TABLE =  "CREATE TABLE " + transfers.TABLE_NAME + " ("
+        String SQL_CREATE_TRANSFER_TABLE = "CREATE TABLE " + transfers.TABLE_NAME + " ("
                 + transfers.COLUMN_FROM_NAME + " VARCHAR, "
                 + transfers.COLUMN_TO_NAME + " VARCHAR, "
                 + transfers.COLUMN_AMOUNT + " INTEGER, "
@@ -58,6 +57,7 @@ public class BankDataDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS users");
+        onCreate(db);
     }
 }
