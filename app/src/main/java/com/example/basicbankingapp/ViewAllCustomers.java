@@ -30,6 +30,7 @@ public class ViewAllCustomers extends AppCompatActivity {
         displayDatabaseInfo();
         recyclerViewAdapter = new RecyclerViewAdapter(this, dataHolder);
         recycler_view.setAdapter(recyclerViewAdapter);
+
     }
 
     @Override

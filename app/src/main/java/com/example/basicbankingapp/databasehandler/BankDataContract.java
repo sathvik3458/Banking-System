@@ -36,6 +36,10 @@ public final class BankDataContract {
 
     public static final class transfers implements BaseColumns {
 
+        public static final String CONTENT_LIST_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_TRANSFERS;
+
+        public static final String CONTENT_ITEM_TYPE = ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_TRANSFERS;
+
         public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_TRANSFERS);
 
         //        Table Name
@@ -47,5 +51,7 @@ public final class BankDataContract {
         public final static String COLUMN_TO_NAME = "to_name";
         public final static String COLUMN_AMOUNT = "amount";
         public final static String COLUMN_STATUS = "status";
+        public final static String COLUMN_DATE_TIME = "date_time";
+
     }
 }

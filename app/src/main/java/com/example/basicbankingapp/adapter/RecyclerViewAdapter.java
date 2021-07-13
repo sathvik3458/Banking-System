@@ -64,7 +64,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public void onClick(View v) {
             int position=this.getBindingAdapterPosition();
             Users single_user = dataHolder.get(position);
-
             Intent intent = new Intent(context, ViewSingleUser.class);
             intent.putExtra("name", single_user.getName());
             intent.putExtra("mob_no", single_user.getMob_no());
@@ -74,6 +73,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             intent.putExtra("email", single_user.getEmail());
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
+
         }
     }
 }
