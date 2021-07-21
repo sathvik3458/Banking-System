@@ -8,6 +8,5 @@
 
 ![Design and Layout](https://user-images.githubusercontent.com/68188826/125959769-119fa398-a710-4ee1-872f-f51f29d46224.png)
 
-## Project Explanation
 
-- Link: https://youtu.be/qQaiXdFjzv8  
+  
